@@ -12,6 +12,10 @@
   --font-family: "Cinzel";
 }
 
+@function getAnimationDuration($duration: number) {
+  @return calc($duration * var(--animation-speed));
+}
+
 /* All */
 * {
   margin: 0;
@@ -64,7 +68,7 @@ a {
         bottom: -5px;
         left: 0;
         transform: scaleX(0);
-        transition: transform calc(var(--animation-speed) * 0.3s) ease-in-out;
+        transition: getAnimationDuration(0.2s) ease-in-out;
       }
       &:hover {
         &::before {
@@ -77,8 +81,61 @@ a {
       }
     }
   }
+  .sidebar-btn {
+    height: 28px;
+    width: 28px;
+    position: relative;
+    .bar {
+      height: 5px;
+      width: 100%;
+      background-color: var(--text-color);
+      position: absolute;
+      border-radius: 15px;
+      transition: transform getAnimationDuration(0.5s) ease-in-out;
+      &:nth-child(1) {
+        top: 0;
+      }
+      &:nth-child(2) {
+        top: 50%;
+        transform: scaleX(0.8) translateY(-50%);
+      }
+      &:nth-child(3) {
+        top: 100%;
+        transform: translateY(-100%);
+      }
+    }
+    &.active {
+      .bar {
+        top: 50%;
+        transition: transform getAnimationDuration(0.5s) ease-in-out;
+
+        &:nth-child(1) {
+          transform: translate(0, -50%) rotate(45deg);
+        }
+        &:nth-child(2) {
+          transform: scaleX(0) translateY(-50%);
+        }
+        &:nth-child(3) {
+          transform: translate(0, -50%) rotate(-45deg);
+        }
+      }
+    }
+  }
 }
 
 .container {
   padding-inline: 15vw;
+}
+
+/* Media Queries */
+
+@media screen and (max-width: 768px) {
+  .navbar {
+    .nav-links {
+      display: none;
+    }
+    .sidebar-btn {
+      display: block;
+    }
+  }
 }
