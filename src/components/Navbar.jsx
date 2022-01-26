@@ -15,7 +15,7 @@ function Navbar() {
       icon: faHome,
     },
     {
-      name: "Album",
+      name: "Albums",
       path: "#!",
       icon: faImage,
     },

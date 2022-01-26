@@ -1,0 +1,28 @@
+.section.album-of-the-week {
+  .col.img {
+    img {
+      width: 100%;
+    }
+  }
+  .col.typography {
+    padding-left: 1em;
+    .album-item {
+      border-left: 0.3em solid var(--primary-color);
+      margin-bottom: 0.5em;
+      padding: 0.1em 0 0.1em 0.5em;
+      color: var(--text-light);
+      font-weight: 500;
+      transform: translateX(120%);
+      opacity: 0;
+      animation: getAnimationDuration(0.4s) slideInRight forwards;
+      @for $i from 1 to 8 {
+        &:nth-child(#{$i}) {
+          animation-delay: calc(var(--animation-speed) * $i * 0.5s);
+        }
+      }
+    }
+    .btn {
+      margin-top: 2em;
+    }
+  }
+}
