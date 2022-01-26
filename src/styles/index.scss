@@ -26,6 +26,7 @@
 
 body {
   font-size: var(--font-size);
+  padding-top: 55px;
 }
 
 a {
@@ -59,7 +60,7 @@ img {
 }
 
 .container {
-  padding-inline: 15vw;
+  padding-inline: 25vw;
 }
 
 .custom-image {
@@ -96,6 +97,7 @@ img {
   align-items: center;
   font-family: var(--font-family-secondary);
   margin-bottom: 3vw;
+  flex-wrap: wrap;
   .info {
     color: var(--text-light);
     font-size: 1.5em;
@@ -113,61 +115,6 @@ img {
   }
 }
 
-.footer {
-  background: #0f0f0f;
-  color: #fff;
-  padding-block: 3em;
-  display: grid;
-  grid-template-columns: 2fr 1fr 1fr;
-  gap: 1em;
-  .footer-section {
-    p {
-      opacity: 0.9;
-      margin-bottom: 0.5em;
-    }
-    p.title {
-      opacity: 1;
-      font-weight: bold;
-      margin-bottom: 1em;
-      font-size: 1.1em;
-      position: relative;
-      &::after {
-        content: "";
-        display: inline-block;
-        height: 1px;
-        width: 100%;
-        background-color: var(--primary-color);
-        position: absolute;
-        bottom: -5px;
-        left: 0;
-        animation: getAnimationDuration(3s) slideInRight forwards;
-      }
-    }
-    .sources {
-      display: block;
-      margin-bottom: 0.5em;
-      text-decoration: none;
-      color: var(--primary-color);
-      opacity: 0.8;
-    }
-    .copyright {
-      color: var(--primary-color);
-      margin-top: 1em;
-    }
-    .social-link {
-      display: flex;
-      margin-bottom: 0.2em;
-      text-decoration: none;
-      color: #fff;
-      opacity: 0.8;
-      b {
-        color: var(--primary-color);
-        margin-left: 0.5em;
-      }
-    }
-  }
-}
-
 /* Imports */
 
 @import "partials/navbar";
@@ -176,8 +123,22 @@ img {
 @import "partials/album-of-the-year";
 @import "partials/quote-section";
 @import "partials/greatest";
+@import "partials/footer";
 
 /* Media Queries */
+
+@media screen and (max-width: 1280px) {
+  .container {
+    padding-inline: 18vw;
+  }
+}
+
+@media screen and (max-width: 1050px) {
+  .container {
+    padding-inline: 12vw;
+  }
+}
+
 @media screen and (max-width: 768px) {
   .navbar {
     .nav-links {
@@ -187,7 +148,48 @@ img {
       display: block;
     }
   }
+  .section {
+    .col {
+      width: 100%;
+      padding: 0 !important;
+      text-align: center;
+      margin-bottom: 2em;
+    }
+    .album-item {
+      display: inline-block;
+      margin: 1em;
+    }
+  }
+  .section.album-of-the-week {
+    .btn {
+      display: block;
+      margin-left: 50%;
+      transform: translateX(-50%);
+    }
+  }
+  .footer {
+    grid-template-columns: repeat(4, 1fr);
+    .footer-section:nth-child(1) {
+      grid-column: span 4;
+    }
+    .footer-section:nth-child(2),
+    .footer-section:nth-child(3) {
+      grid-column: span 2;
+    }
+  }
+
   .greatest-card {
     box-shadow: 0 5px 10px var(--shadow-color);
+  }
+  @media screen and (max-width: 1280px) {
+    .container {
+      padding-inline: 6vw;
+    }
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .container {
+    padding-inline: 3vw;
   }
 }
