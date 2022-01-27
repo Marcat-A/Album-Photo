@@ -27,6 +27,7 @@
 body {
   font-size: var(--font-size);
   padding-top: 55px;
+  background-color: var(--background-light);
 }
 
 a {
@@ -101,6 +102,9 @@ img {
   font-family: var(--font-family-secondary);
   margin-bottom: 3vw;
   flex-wrap: wrap;
+  &.d-block {
+    display: block;
+  }
   .info {
     color: var(--text-light);
     font-size: 1.5em;
@@ -128,6 +132,7 @@ img {
 @import "partials/greatest";
 @import "partials/footer";
 @import "partials/albums-tri";
+@import "partials/albums";
 
 /* Media Queries */
 
@@ -198,37 +203,52 @@ img {
   }
 }
 
-.albums-container {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 1.5em;
+.options-container {
+  box-shadow: 0 5px 10px var(--shadow-color);
+  padding: 1em;
+  border-radius: 5px;
+  border-left: 0.5em solid var(--primary-color);
+  background-color: var(--background-light);
+  margin-top: 0.5em;
+  display: flex;
+  gap: 1em;
+  .option {
+    height: 3.5em;
+    width: 3.5em;
+    box-shadow: 0 3px 6px var(--shadow-color);
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    &.light {
+      background-color: #fff;
+    }
+    &.dark {
+      background-color: rgb(29, 29, 29);
+    }
+    .check {
+      height: 2.5em;
+      width: 2.5em;
+      background-color: var(--primary-color);
+      border-radius: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 1.2em;
+      box-shadow: 0 2px 5px var(--shadow-color);
+      svg {
+        height: 1.5em;
+        width: 1.5em;
+      }
+    }
+  }
+  .btn span {
+    margin-left: 0.5em;
+  }
 }
 
-.album-card {
-  border-radius: 5px;
-  overflow: hidden;
-  box-shadow: 0 5px 10px var(--shadow-color);
-  .album-card-info {
-    padding: 15px;
-  }
-  .album-title {
-    font-size: 1.25em;
-    font-weight: bold;
-    margin-bottom: 0.5em;
-    color: var(--text-color);
-  }
-  .album-description {
-    color: var(--text-light);
-    font-size: 0.9em;
-    letter-spacing: 1px;
-  }
-  .view-btn {
-    font-size: 1em;
-    text-transform: uppercase;
-    text-decoration: none;
-    color: var(--primary-color);
-    font-weight: bold;
-    margin-top: 0.75em;
-    display: inline-block;
-  }
+.d-block h2 {
+  font-size: 1.75em;
+  text-transform: capitalize;
+  color: var(--text-color);
 }
