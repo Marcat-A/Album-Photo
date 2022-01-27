@@ -70,6 +70,9 @@ img {
   &:hover > p {
     opacity: 1;
   }
+  &.album-image {
+    height: 200px;
+  }
   img {
     position: absolute;
     top: 0;
@@ -124,6 +127,7 @@ img {
 @import "partials/quote-section";
 @import "partials/greatest";
 @import "partials/footer";
+@import "partials/albums-tri";
 
 /* Media Queries */
 
@@ -191,5 +195,40 @@ img {
 @media screen and (max-width: 480px) {
   .container {
     padding-inline: 3vw;
+  }
+}
+
+.albums-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.5em;
+}
+
+.album-card {
+  border-radius: 5px;
+  overflow: hidden;
+  box-shadow: 0 5px 10px var(--shadow-color);
+  .album-card-info {
+    padding: 15px;
+  }
+  .album-title {
+    font-size: 1.25em;
+    font-weight: bold;
+    margin-bottom: 0.5em;
+    color: var(--text-color);
+  }
+  .album-description {
+    color: var(--text-light);
+    font-size: 0.9em;
+    letter-spacing: 1px;
+  }
+  .view-btn {
+    font-size: 1em;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: var(--primary-color);
+    font-weight: bold;
+    margin-top: 0.75em;
+    display: inline-block;
   }
 }

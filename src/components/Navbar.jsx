@@ -1,6 +1,7 @@
 import React from "react";
 import { useState } from "react";
 import Sidebar from "./Sidebar";
+import { Link, useLocation } from "react-router-dom";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faHome, faImage, faCog } from "@fortawesome/free-solid-svg-icons";
@@ -8,20 +9,21 @@ import "../styles/index.scss";
 
 function Navbar() {
   const [showSidebar, setShowSidebar] = useState(false);
+  const location = useLocation();
   const links = [
     {
       name: "Accueil",
-      path: "#!",
+      path: "/",
       icon: faHome,
     },
     {
       name: "Albums",
-      path: "#!",
+      path: "/albums",
       icon: faImage,
     },
     {
       name: "Options",
-      path: "#!",
+      path: "/settings",
       icon: faCog,
     },
   ];
@@ -32,15 +34,19 @@ function Navbar() {
   return (
     <>
       <div className="navbar container">
-        <a href="#!" className="logo">
+        <Link to="/" className="logo">
           Alb<span>u</span>m Ph<span>o</span>t<span>o</span>
-        </a>
+        </Link>
         <div className="nav-links">
           {links.map((link) => (
-            <a href={link.path} key={link.name}>
+            <Link
+              to={link.path}
+              key={link.name}
+              className={location.pathname === link.path ? "active" : ""}
+            >
               <FontAwesomeIcon icon={link.icon} />
               {link.name}
-            </a>
+            </Link>
           ))}
         </div>
         <div

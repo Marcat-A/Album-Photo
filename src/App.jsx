@@ -1,22 +1,24 @@
-import HeroSection from "./components/HeroSection";
 import Navbar from "./components/Navbar";
-import AlbumOfTheWeek from "./components/AlbumOfTheWeek";
-import QuoteSection from "./components/QuoteSection";
-import GreatestPhoto from "./components/GreatestPhoto";
 import Footer from "./components/Footer";
+import Home from "./components/pages/Home";
+import Settings from "./components/pages/Settings";
+import Albums from "./components/pages/Albums";
+
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 function App() {
   return (
-    <div className="App">
+    <Router>
       <Navbar />
       <div className="container main">
-        <HeroSection />
-        <AlbumOfTheWeek />
-        <QuoteSection />
-        <GreatestPhoto />
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route exact path="/albums" element={<Albums />} />
+          <Route exact path="/settings" element={<Settings />} />
+        </Routes>
       </div>
       <Footer />
-    </div>
+    </Router>
   );
 }
 
