@@ -25,7 +25,15 @@ function Footer() {
           target="_blank"
           rel="noreferrer"
         >
-          Tuto implémentation JsonPlaceHolder
+          Implémentation JsonPlaceHolder
+        </a>
+        <a
+          href="https://www.youtube.com/watch?v=hOg-hJDw1NM"
+          className="sources"
+          target="_blank"
+          rel="noreferrer"
+        >
+          Comprendre React Router V6
         </a>
         <a
           href="https://docs.google.com/document/d/1lt_Ni2u3qJRNxA87y24XoWo3-NjZ9xQ6mQ-x5gM25A8/edit?usp=sharing"

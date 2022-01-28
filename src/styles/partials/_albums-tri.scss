@@ -16,6 +16,10 @@
       transform: translateX(150%);
       opacity: 0;
       animation: getAnimationDuration(0.5s) slideInRight forwards;
+      .link-search-item {
+        text-decoration: none;
+        color: #fff;
+      }
     }
   }
   .search-box {

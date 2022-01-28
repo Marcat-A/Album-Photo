@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 function AlbumsCard({ album, pt }) {
   return (
@@ -12,9 +13,9 @@ function AlbumsCard({ album, pt }) {
           Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sint quam
           possimus quas nesciunt natus placeat in enim culpa vero nulla.
         </p>
-        <a href="#!" className="view-btn">
+        <Link to={album.title} className="view-btn">
           Voir l'album
-        </a>
+        </Link>
       </div>
     </div>
   );

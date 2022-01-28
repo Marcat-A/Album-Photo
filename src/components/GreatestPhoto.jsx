@@ -1,6 +1,7 @@
 import React from "react";
 import GreatestCard from "./GreatestCard";
 
+
 function GreatestPhoto() {
   const greatest = [
     {

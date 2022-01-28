@@ -68,7 +68,7 @@ function Albums() {
       title: "Long Island",
       image: "https://via.placeholder.com/600/fb4137",
     },
-  ].sort(() => Math.random() - 0.5);
+  ]; /* .sort(() => Math.random() - 0.5) */
   return (
     <>
       <AlbumsSearches />

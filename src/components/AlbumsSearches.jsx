@@ -2,6 +2,7 @@ import React from "react";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSearch } from "@fortawesome/free-solid-svg-icons";
+import { Link } from "react-router-dom";
 
 function AlbumsSearches() {
   const searches = [
@@ -32,7 +33,9 @@ function AlbumsSearches() {
             style={{ animationDelay: index * 0.15 + "s" }}
             className="search-item"
           >
-            {search}
+            <Link to={search} className="link-search-item">
+              {search}
+            </Link>
           </div>
         ))}
       </div>
