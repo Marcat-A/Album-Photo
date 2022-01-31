@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 function AlbumOfTheWeek() {
   const list = [
@@ -22,7 +23,9 @@ function AlbumOfTheWeek() {
               {item}
             </p>
           ))}
-          <button className="btn">Regarder</button>
+          <Link to={"/albums/Zombie"}>
+            <button className="btn">Regarder</button>
+          </Link>
         </div>
       </div>
     </>

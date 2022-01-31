@@ -216,6 +216,7 @@ img {
     margin-bottom: 1em;
     font-family: var(--font-family);
     padding-block: 0.3em;
+    background-color: var(--background-color);
   }
   .solo-album-mainimage {
     display: flex;
@@ -237,5 +238,7 @@ img {
     border-radius: 5px;
     overflow: hidden;
     padding: 0.5em;
+    color: var(--text-color);
+    background-color: var(--background-color);
   }
 }

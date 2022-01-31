@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import CustomImage from "./CustomImage";
 
 function HeroSection() {
@@ -9,7 +10,9 @@ function HeroSection() {
         <p className="info">
           Bienvenue sur notre site d'album photos, n'hésitez pas à visiter !
         </p>
-        <button className="btn">Explorer</button>
+        <Link to={"/Albums"}>
+          <button className="btn">Explorer</button>
+        </Link>
       </div>
       <div className="col gallery">
         <CustomImage pt={"90%"} />

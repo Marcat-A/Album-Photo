@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 function GreatestCard({ great }) {
   return (
@@ -12,7 +13,9 @@ function GreatestCard({ great }) {
         <p className="greatest-card-album">
           Album : <b>{great.album}</b>
         </p>
-        <button className="btn">Voir</button>
+        <Link to={"/albums/" + great.album}>
+          <button className="btn">Voir</button>
+        </Link>
       </div>
     </div>
   );
