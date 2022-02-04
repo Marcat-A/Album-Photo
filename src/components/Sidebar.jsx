@@ -2,6 +2,7 @@ import React from "react";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Link, useLocation } from "react-router-dom";
+import { FormattedMessage } from "react-intl";
 
 function Sidebar({ links, close }) {
   const location = useLocation();
@@ -19,7 +20,7 @@ function Sidebar({ links, close }) {
             key={link.name}
           >
             <FontAwesomeIcon icon={link.icon} />
-            {link.name}
+            <FormattedMessage id={"navbar." + `${link.name}`} defaultMessage={`${link.name}`}/>
           </Link>
         ))}
       </div>

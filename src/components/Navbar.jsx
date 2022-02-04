@@ -6,6 +6,7 @@ import { Link, useLocation } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faHome, faImage, faCog } from "@fortawesome/free-solid-svg-icons";
 import "../styles/index.scss";
+import { FormattedMessage } from "react-intl";
 
 function Navbar() {
   const [showSidebar, setShowSidebar] = useState(false);
@@ -35,17 +36,18 @@ function Navbar() {
     <>
       <div className="navbar container">
         <Link to="/" className="logo">
-          Alb<span>u</span>m Ph<span>o</span>t<span>o</span>
+          <FormattedMessage id="navbar.logo" defaultMessage="Alb<span>u</span>m Ph<span>o</span>t<span>o</span>" values={{span: (span) => <span>{span}</span>}} />
         </Link>
         <div className="nav-links">
           {links.map((link) => (
+            
             <Link
               to={link.path}
               key={link.name}
               className={location.pathname === link.path ? "active" : ""}
             >
               <FontAwesomeIcon icon={link.icon} />
-              {link.name}
+              <FormattedMessage id={"navbar." + `${link.name}`} defaultMessage={`${link.name}`}/>
             </Link>
           ))}
         </div>

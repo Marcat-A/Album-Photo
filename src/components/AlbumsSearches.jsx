@@ -3,6 +3,7 @@ import React, { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSearch } from "@fortawesome/free-solid-svg-icons";
 import { Link } from "react-router-dom";
+import { FormattedMessage } from "react-intl";
 
 function AlbumsSearches() {
   const [searchTerm, setSearchTerm] = useState("");
@@ -26,7 +27,7 @@ function AlbumsSearches() {
   ];
   return (
     <div className="albums-tri section">
-      <h2>Nos Albums</h2>
+      <h2><FormattedMessage id="albums.title" defaultMessage="Nos Albums"/></h2>
       <div className="albums-tri-container">
         {searches
           .filter((val) => {
@@ -53,7 +54,7 @@ function AlbumsSearches() {
         <input
           type="text"
           name="search"
-          placeholder="Rechercher ..."
+          placeholder="Rechercher..."
           onChange={(event) => {
             setSearchTerm(event.target.value);
           }}

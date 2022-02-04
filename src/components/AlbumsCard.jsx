@@ -1,4 +1,5 @@
 import React from "react";
+import { FormattedMessage } from "react-intl";
 import { Link } from "react-router-dom";
 
 function AlbumsCard({ album, pt }) {
@@ -14,7 +15,7 @@ function AlbumsCard({ album, pt }) {
           possimus quas nesciunt natus placeat in enim culpa vero nulla.
         </p>
         <Link to={album.title} className="view-btn">
-          Voir l'album
+        <FormattedMessage id="album.btn" defaultMessage="Voir l'Album"/>
         </Link>
       </div>
     </div>

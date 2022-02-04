@@ -6,9 +6,21 @@ import Albums from "./components/pages/Albums";
 import Album from "./components/pages/Album";
 
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { IntlProvider } from "react-intl";
+import French from "./lang/fr-CA.json"
+import English from "./lang/en-US.json"
 
+const local = navigator.language;
+
+let lang;
+if (local === "en-US"){
+  lang = English
+} else {
+  lang = French
+}
 function App() {
   return (
+    <IntlProvider locale messages={lang}>
     <Router>
       <Navbar />
       <div className="container main">
@@ -21,6 +33,7 @@ function App() {
       </div>
       <Footer />
     </Router>
+    </IntlProvider>
   );
 }
 

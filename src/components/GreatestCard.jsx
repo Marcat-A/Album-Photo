@@ -1,4 +1,5 @@
 import React from "react";
+import { FormattedMessage } from "react-intl";
 import { Link } from "react-router-dom";
 
 function GreatestCard({ great }) {
@@ -14,7 +15,7 @@ function GreatestCard({ great }) {
           Album : <b>{great.album}</b>
         </p>
         <Link to={"/albums/" + great.album}>
-          <button className="btn">Voir</button>
+          <button className="btn"><FormattedMessage id="card.btn" defaultMessage="Voir" /></button>
         </Link>
       </div>
     </div>

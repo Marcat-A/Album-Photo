@@ -1,4 +1,5 @@
 import React from "react";
+import { FormattedMessage } from "react-intl";
 import GreatestCard from "./GreatestCard";
 
 function GreatestPhoto() {
@@ -54,7 +55,7 @@ function GreatestPhoto() {
   ];
   return (
     <div className="section photo">
-      <h1 className="title">Les clichés les mieux notés</h1>
+      <h1 className="title"><FormattedMessage id="greatest.title" defaultMessage="Les clichés les mieux notés" /></h1>
       <div className="greatest-container">
         {greatest.map((great) => (
           <GreatestCard key={great.name} great={great} />

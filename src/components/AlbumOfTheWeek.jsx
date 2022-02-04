@@ -1,4 +1,5 @@
 import React from "react";
+import { FormattedMessage } from "react-intl";
 import { Link } from "react-router-dom";
 
 function AlbumOfTheWeek() {
@@ -17,14 +18,14 @@ function AlbumOfTheWeek() {
           <img src="https://via.placeholder.com/600/bfb73" alt=""></img>
         </div>
         <div className="col typography">
-          <h1 className="title">Album de la semaine</h1>
+          <h1 className="title"><FormattedMessage id="albumOfTheWeek.title" defaultMessage="Album de la semaine" /></h1>
           {list.map((item) => (
             <p className="album-item" key={item}>
               {item}
             </p>
           ))}
           <Link to={"/albums/Zombie"}>
-            <button className="btn">Regarder</button>
+            <button className="btn"><FormattedMessage id="albumOfTheWeek.btn" defaultMessage="Regarder" /></button>
           </Link>
         </div>
       </div>

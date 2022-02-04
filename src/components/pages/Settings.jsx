@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCheck } from "@fortawesome/free-solid-svg-icons";
+import { FormattedMessage } from "react-intl";
 
 function Settings() {
   const [settings, setSettings] = useState({
@@ -132,7 +133,7 @@ function Settings() {
         </div>
       </div>
       <div className="section d-block">
-        <h2>Couleur Primaire</h2>
+        <h2><FormattedMessage id="options.color" defaultMessage="Couleur Primaire"/></h2>
         <div className="options-container">
           {primaryColors.map((color, index) => (
             <div
@@ -158,9 +159,8 @@ function Settings() {
               key={index}
               className="btn"
               onClick={() => changeFontSize(index)}
-            >
-              {size.title}
-              {fontSize === index && (
+            >{size.title}
+               {fontSize === index && (
                 <span>
                   <FontAwesomeIcon icon={faCheck} />
                 </span>

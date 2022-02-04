@@ -1,13 +1,13 @@
 import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faQuoteLeft } from "@fortawesome/free-solid-svg-icons";
+import { FormattedMessage } from "react-intl";
 
 function QuoteSection() {
   return (
     <div className="section quote">
       <p className="quote-text">
-        <FontAwesomeIcon icon={faQuoteLeft} />
-        Vous savez, moi je ne crois pas qu’il y ait de bonne ou de mauvaise
+        <FontAwesomeIcon icon={faQuoteLeft} /><FormattedMessage id="quote" defaultMessage="Vous savez, moi je ne crois pas qu’il y ait de bonne ou de mauvaise
         situation. Moi, si je devais résumer ma vie aujourd’hui avec vous, je
         dirais que c’est d’abord des rencontres. Des gens qui m’ont tendu la
         main, peut-être à un moment où je ne pouvais pas, où j’étais seul chez
@@ -22,7 +22,8 @@ function QuoteSection() {
         humanité ? », je leur réponds très simplement que c’est ce goût de
         l’amour, ce goût donc qui m’a poussé aujourd’hui à entreprendre une
         construction mécanique... mais demain qui sait ? Peut-être simplement à
-        me mettre au service de la communauté, à faire le don, le don de soi.
+        me mettre au service de la communauté, à faire le don, le don de soi." />
+        
       </p>
       <p className="quote-author">- Nexusis.</p>
     </div>
