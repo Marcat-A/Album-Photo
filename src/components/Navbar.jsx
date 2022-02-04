@@ -4,7 +4,7 @@ import Sidebar from "./Sidebar";
 import { Link, useLocation } from "react-router-dom";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faHome, faImage, faCog } from "@fortawesome/free-solid-svg-icons";
+import { faHome, faImage, faCog, faLanguage } from "@fortawesome/free-solid-svg-icons";
 import "../styles/index.scss";
 import { FormattedMessage } from "react-intl";
 
@@ -27,6 +27,11 @@ function Navbar() {
       path: "/settings",
       icon: faCog,
     },
+    {
+      name:"Language",
+      path:"/language",
+      icon:faLanguage,
+    }
   ];
   function closeSidebar() {
     setShowSidebar(false);

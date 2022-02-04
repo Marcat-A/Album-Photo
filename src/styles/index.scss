@@ -134,6 +134,7 @@ img {
 @import "partials/albums-tri";
 @import "partials/albums";
 @import "partials/options";
+@import "partials/album-solo";
 
 /* Media Queries */
 
@@ -204,41 +205,24 @@ img {
   }
 }
 
-.album {
-  .solo-album-title {
-    width: 100%;
-    display: relative;
-    text-align: center;
-    color: var(--text-color);
-    border-radius: 5px;
-    overflow: hidden;
-    box-shadow: 0 3px 6px var(--shadow-color);
-    margin-bottom: 1em;
-    font-family: var(--font-family);
-    padding-block: 0.3em;
-    background-color: var(--background-color);
+.section.language{
+  display: block;
+  .lang-title{
+    margin-bottom: 2em;
   }
-  .solo-album-mainimage {
-    display: flex;
-    width: 100%;
-    justify-content: center;
-    align-items: center;
-    img {
-      width: 400px;
-      height: 400px;
-      border-radius: 5px;
-      box-shadow: 0 3px 12px var(--shadow-color);
-      margin-bottom: 1em;
-    }
-  }
-  .solo-album-info {
-    font-size: 1em;
-    text-align: center;
-    box-shadow: 0 3px 6px var(--shadow-color);
-    border-radius: 5px;
-    overflow: hidden;
-    padding: 0.5em;
-    color: var(--text-color);
-    background-color: var(--background-color);
+  .lang-btn{
+    margin: 1em;
+    display: block;
   }
 }
+.solo-album-mainimage{
+  width: 100%;
+  justify-content: center;
+  display: flex;
+  padding: 1em;
+  img{
+    width: 300px;
+  }
+}
+
+

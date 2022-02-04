@@ -23,8 +23,13 @@
     "albums.title":"Our Albums",
     "album.btn":"Show",
     "options.color":"Primary Color",
-    "speed.lent":"Small",
-    "speed.normal":"Medium",
-    "speed.rapide":"Fat"
+    "speed.Lent":"Small",
+    "speed.Normal":"Medium",
+    "speed.Rapide":"Fat",
+    "navbar.Language":"Language",
+    "size.Petit":"Small",
+    "size.Moyen":"Medium",
+    "size.Grand":"Tall",
+    "language.title":"Thanks to choose your language:"
 
 }

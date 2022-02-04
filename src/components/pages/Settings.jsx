@@ -159,7 +159,7 @@ function Settings() {
               key={index}
               className="btn"
               onClick={() => changeFontSize(index)}
-            >{size.title}
+            ><FormattedMessage id={"size." + `${size.title}`} defaultMessage={`${size.title}`}/>
                {fontSize === index && (
                 <span>
                   <FontAwesomeIcon icon={faCheck} />
@@ -178,7 +178,7 @@ function Settings() {
               className="btn"
               onClick={() => changeAnimationSpeed(index)}
             >
-              {speed.title}
+              <FormattedMessage id={"speed." + `${speed.title}`} defaultMessage={`${speed.title}`}/>
               {animationSpeed === index && (
                 <span>
                   <FontAwesomeIcon icon={faCheck} />
