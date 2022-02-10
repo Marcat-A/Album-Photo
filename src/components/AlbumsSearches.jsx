@@ -1,51 +1,42 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSearch } from "@fortawesome/free-solid-svg-icons";
 import { Link } from "react-router-dom";
 import { FormattedMessage } from "react-intl";
+import {getPhotosByAlbum} from './AxiosRequest.js';
 
 function AlbumsSearches() {
+
   const [searchTerm, setSearchTerm] = useState("");
-  const searches = [
-    "Mojito",
-    "Daïquiri",
-    "Piña Colada",
-    "Caïpirinha",
-    "Zombie",
-    "Julep",
-    "El Presidente",
-    "Punch Cubain",
-    "Angostura",
-    "Mademoiselle",
-    "Aloha",
-    "Ti-Punch",
-    "Planteur",
-    "Mai Tai",
-    "Tropiques",
-    "Long Island",
-  ];
+  const [albums, setAlbum] = useState([]);
+
+  getPhotosByAlbum(1, setAlbum);
+  
+  useEffect(getPhotosByAlbum, []);
+
+
   return (
     <div className="albums-tri section">
       <h2><FormattedMessage id="albums.title" defaultMessage="Nos Albums"/></h2>
       <div className="albums-tri-container">
-        {searches
+        {albums
           .filter((val) => {
             if (searchTerm === "") {
               return val;
-            } else if (val.toLowerCase().includes(searchTerm.toLowerCase())) {
+            } else if (val.title.toLowerCase().includes(searchTerm.toLowerCase())) {
               return val;
             } else {return("")
             }
           })
-          .map((search, index) => (
+          .map((album, index) => (
             <div
               key={index}
               style={{ animationDelay: index * 0.15 + "s" }}
               className="search-item"
             >
-              <Link to={search} className="link-search-item">
-                {search}
+              <Link to={"/albums/" + album.albumId} className="link-search-item">
+                {album.title}
               </Link>
             </div>
           ))}

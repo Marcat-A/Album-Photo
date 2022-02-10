@@ -1,64 +1,28 @@
-import React from "react";
+import axios from "axios";
+import React, { useEffect, useState } from "react";
 import { FormattedMessage } from "react-intl";
 import GreatestCard from "./GreatestCard";
 
+
+const url = "https://jsonplaceholder.typicode.com/photos?_start=0&_limit=9";
+const title = "";
 function GreatestPhoto() {
-  const greatest = [
-    {
-      name: "Vamos Allaplaya",
-      img: "https://via.placeholder.com/600/392537",
-      likes: "10",
-      album: "Mojito",
-    },
-    {
-      name: "Me gusta Bailar",
-      img: "https://via.placeholder.com/600/c29554",
-      likes: "10",
-      album: "Daïquiri",
-    },
-    {
-      name: "Bailar Conmigo",
-      img: "https://via.placeholder.com/600/c29554",
-      likes: "10",
-      album: "Piña Colada",
-    },
-    {
-      name: "La Parmiggiano",
-      img: "https://via.placeholder.com/600/132608",
-      likes: "10",
-      album: "Caïpirinha",
-    },
-    {
-      name: "Quando potato",
-      img: "https://via.placeholder.com/600/95773a",
-      likes: "10",
-      album: "Zombie",
-    },
-    {
-      name: "Pololo Niloco",
-      img: "https://via.placeholder.com/600/5fa0cb",
-      likes: "10",
-      album: "Julep",
-    },
-    {
-      name: "Tigun Bolalo",
-      img: "https://via.placeholder.com/600/95773a",
-      likes: "10",
-      album: "El Presidente",
-    },
-    {
-      name: "Mucho Desgusto",
-      img: "https://via.placeholder.com/600/5fa0cb",
-      likes: "10",
-      album: "Punch Cubain",
-    },
-  ];
+
+  function fetchImage() {
+    axios.get(url, title).then((response) => {
+      setPictures(response.data);
+    });
+  }
+  const [pictures, setPictures] = useState([]);
+
+  useEffect(fetchImage, []);
+
   return (
     <div className="section photo">
       <h1 className="title"><FormattedMessage id="greatest.title" defaultMessage="Les clichés les mieux notés" /></h1>
       <div className="greatest-container">
-        {greatest.map((great) => (
-          <GreatestCard key={great.name} great={great} />
+        {pictures.map((great) => (
+          <GreatestCard key={great.title} great={great} />
         ))}
       </div>
     </div>

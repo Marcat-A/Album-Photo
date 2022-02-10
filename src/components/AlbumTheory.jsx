@@ -6,7 +6,7 @@ function AlbumTheory({ album }) {
       <div className="album section">
         <h1 className="solo-album-title">{album.title}</h1>
         <div className="solo-album-mainimage">
-          <img src={album.mainImage} alt={album.albumId} />
+          <img src={album.url} alt={album.albumId} />
         </div>
         <p className="solo-album-info">
           Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eius nobis

@@ -24,7 +24,7 @@ function AlbumOfTheWeek() {
               {item}
             </p>
           ))}
-          <Link to={"/albums/Zombie"}>
+          <Link to={"/albums/1"}>
             <button className="btn"><FormattedMessage id="albumOfTheWeek.btn" defaultMessage="Regarder" /></button>
           </Link>
         </div>
